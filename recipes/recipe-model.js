@@ -13,7 +13,7 @@ function getRecipes() {
 function getShoppingList(id) {
     return db('ingredients as i')
         .join('recipes as r', 'r.id', 'i.recipe_id')
-        .select('i.id', 'i.ingredient', 'i.quantity')
+        .select('i.id', 'r.name', 'i.ingredient', 'i.quantity')
         .where('i.recipe_id', id);
 }
 
